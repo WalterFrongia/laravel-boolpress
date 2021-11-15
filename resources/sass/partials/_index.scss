@@ -1,0 +1,18 @@
+#posts-wrap{
+    margin:auto;
+    width:75%;
+
+    #posts-container{
+        display: flex;
+        flex-wrap: wrap;
+
+        #post{
+            flex-basis: calc(100% / 3);
+            img{
+                height: 200px;
+                width:300px;
+            }
+        }
+    }
+
+}
