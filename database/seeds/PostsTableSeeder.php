@@ -3,6 +3,8 @@
 use Illuminate\Database\Seeder;
 use App\Models\Post;
 
+use Faker\Generator as Faker; 
+
 class PostsTableSeeder extends Seeder
 {
     /**
@@ -10,7 +12,7 @@ class PostsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         
     }
