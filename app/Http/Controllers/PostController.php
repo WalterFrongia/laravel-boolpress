@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
+use app\Http\Controllers;
 
 class PostController extends Controller
 {
@@ -15,7 +17,7 @@ class PostController extends Controller
     {
         $post = Post::all();
 
-        return view('admin.posts.index', compact('comics'));
+        return view('admin.posts.index', compact('post'));
     }
 
     /**
@@ -49,7 +51,7 @@ class PostController extends Controller
     {
         $post = Post::FindOrFail($id);
 
-        return view('admin.post.show', compact('post'));
+        return view('admin.posts.show', compact('post'));
     }
 
     /**
