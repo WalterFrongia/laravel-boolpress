@@ -13,7 +13,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $post = Post::all();
+
+        return view('admin.posts.index', compact('comics'));
     }
 
     /**
@@ -45,7 +47,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::FindOrFail($id);
+
+        return view('admin.post.show', compact('post'));
     }
 
     /**
