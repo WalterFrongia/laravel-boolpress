@@ -7,7 +7,7 @@
                 <div id="post">
                     <h2>{{ $post -> title }}</h2>
                     <img src="{{$post->url_img}}" alt="">
-                    <a href="{{route('admin.post.show' , $post->id)">Leggi post</a>
+                    <h5><a href="{{route('admin.post.show' , $post->id)}}">Leggi post</a></h5>
                 </div>
             @endforeach
         </div>
