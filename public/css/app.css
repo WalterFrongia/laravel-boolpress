@@ -10981,3 +10981,8 @@ a.text-dark:focus {
   width: 300px;
 }
 
+#show-container img {
+  height: 300px;
+  width: 300px;
+}
+
