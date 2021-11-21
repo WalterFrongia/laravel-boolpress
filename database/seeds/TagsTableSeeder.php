@@ -19,7 +19,7 @@ class TagsTableSeeder extends Seeder
         foreach($tagsNames as $name){
             $newTag = new Tag();
             $newTag->name = $name;
-            $newTag->color->$faker->hexColor();
+            $newTag->color = $faker->hexColor();
 
             $newTag->save();
         }
