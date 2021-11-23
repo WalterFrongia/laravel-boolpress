@@ -2,6 +2,7 @@
 
 @section('posts')
     <div id="posts-wrap">
+        <a class="button" href="{{ route('admin.post.create')}}">ADD COMIC</a>
         <div id="posts-container">
             @foreach($posts as $post)
                 <div id="post">

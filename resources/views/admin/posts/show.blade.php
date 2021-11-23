@@ -8,5 +8,7 @@
        <p>{{$post->publication_date}}</p>
 
        <p>{{$post->category->name}}</p>
+
+       <a href="{{ route('admin.post.edit' ,  $post->id)}}"><button>EDIT COMIC</button></a>
     </div>
 @endsection

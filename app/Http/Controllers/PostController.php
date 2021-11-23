@@ -27,7 +27,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.posts.create');
     }
 
     /**
@@ -38,7 +38,14 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Arrivano i dati e si salvano nel db
+        $post = Post::create($request->all());
+        // dd($request->all());
+
+        //per salvare nel db
+        $post -> save(); 
+        //apro la pagina index
+        return redirect()->route('admin.post.index');
     }
 
     /**
@@ -62,7 +69,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        //return di edit come in create
+        return view('admin.posts.edit' ,compact('post'));
     }
 
     /**
@@ -74,7 +83,10 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->update($request->all());
+        // dd($request->all());
+        return redirect()->route('admin.post.index');
     }
 
     /**
