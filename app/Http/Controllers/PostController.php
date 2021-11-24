@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use app\Http\Controllers;
 
@@ -27,7 +28,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        $categories = Category::all();
+        return view('admin.posts.create', compact('categories'));
     }
 
     /**
@@ -38,12 +40,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //Arrivano i dati e si salvano nel db
-        $post = Post::create($request->all());
-        // dd($request->all());
-
-        //per salvare nel db
-        $post -> save(); 
+        // dd($request->all()); 
+        $data = $request->all();
+        // dd($data);
+        $post = Post::create($data);
+        // dd($post);
+        $post->save();
         //apro la pagina index
         return redirect()->route('admin.post.index');
     }

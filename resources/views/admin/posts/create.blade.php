@@ -11,9 +11,16 @@
 
         <input type="text" placeholder="inserisci del testo" name="text">
 
-        <input type="text" placeholder="inserisci data di pubblicazione" name="pubblication_date">
+        <input type="text" placeholder="inserisci data di publicazione" name="publication_date">
 
         <input type="submit" value="CREATE">
+
+
+        <select name="category_id"> <!--category_id rappresenta la colonna in posts (la foreign key)-->
+            @foreach($categories as $category)
+                <option value="{{$category->id}}">{{$category->name}}</option>
+            @endforeach
+        </select>
 
     </form>
 
