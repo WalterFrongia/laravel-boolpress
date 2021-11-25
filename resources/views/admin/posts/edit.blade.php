@@ -16,6 +16,12 @@
         <input type="text" value="{{$post->publication_date}}" name="publication_date">
 
         <input type="submit" value="EDIT">
+        
+        <select name="category_id"> <!--category_id rappresenta la colonna in posts (la foreign key)-->
+            @foreach($categories as $category)
+                <option value="{{$category->id}}" @if($category->id == $post->category_id) selected @endif >{{$category->name}}</option>
+            @endforeach
+        </select>
 
     </form>
 @endsection

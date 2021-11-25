@@ -71,9 +71,10 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::all();
         $post = Post::findOrFail($id);
         //return di edit come in create
-        return view('admin.posts.edit' ,compact('post'));
+        return view('admin.posts.edit' ,compact('post','categories'));
     }
 
     /**
@@ -85,6 +86,8 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+
         $post = Post::findOrFail($id);
         $post->update($request->all());
         // dd($request->all());
